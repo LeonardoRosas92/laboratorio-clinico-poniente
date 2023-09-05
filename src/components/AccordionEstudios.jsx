@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { Toaster, toast } from 'sonner';
 
@@ -13,7 +13,7 @@ export default function AccordionEstudios({index, categoria, getData, usuario}) 
   } 
   const crear = async (categoria, nombre, descripcion) => {
     await fetch(`https://apilcp.onrender.com/api/estudios/${encodeURI(categoria)}`,
-     { 
+    { 
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ export default function AccordionEstudios({index, categoria, getData, usuario}) 
   return (
     <>
     <Toaster richColors position="top-right"/>
-      <div className="accordion accordion-flush col-12 col-md-6" id={`accordionFlushExample${index}`} >
+      <div className="accordion accordion-flush col-12" id={`accordionFlushExample${index}`} >
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button className="accordion-button collapsed" type="button" data-bs-toggle={`collapse`} data-bs-target={`#flush-collapseOne${index}`} aria-expanded="false" aria-controls={`#flush-collapseOne${index}`} >
@@ -56,9 +56,8 @@ export default function AccordionEstudios({index, categoria, getData, usuario}) 
                         <button className={`btn btn-danger ${usuario === "admin" ? "d-block" :"d-none"}`} onClick={() => eliminar (estudio.nombre)}>
                           <i className="bi bi-trash"></i>
                         </button>
-                        <button className={`btn btn-info ${usuario === "admin" ? "d-none" :"d-block"}`} onClick={() => eliminar (estudio.nombre)}>
-                          Ver
-                        </button>
+                        <Link className={`btn btn-info ${usuario === "admin" ? "d-none" :"d-block"}`} to={`/estudio/${estudio.nombre}`}>Ver</Link>
+                
                       </td>
                     </tr>
                   ))
