@@ -1,4 +1,4 @@
-export default function IndicationsComponent({ estudio, index, usuario, descripcion }) {
+export default function IndicationsComponent({ nombre, index, waitTime, descripcion, usuario }) {
   return (
     <>
       <button
@@ -25,7 +25,7 @@ export default function IndicationsComponent({ estudio, index, usuario, descripc
           <div className="modal-content">
             <div className="modal-header">
               <h3 className="modal-title fs-5" id={`exampleModalLabel${index}`}>
-                {estudio}
+                {nombre}
               </h3>
               <button
                 type="button"
@@ -44,7 +44,7 @@ export default function IndicationsComponent({ estudio, index, usuario, descripc
                   <div className="col-6">
                     <h3 className="bi bi-clock-history text-center">
                       {" "}
-                      1 - 2 días {descripcion}
+                      {waitTime} {descripcion}
                     </h3>
                   </div>
                 </div>
