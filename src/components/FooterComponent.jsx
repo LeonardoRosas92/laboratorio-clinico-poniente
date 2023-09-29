@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { Link } from 'react-router-dom';
 import Logo from '/assets/img/Logo.svg';
+import Terms from './Terms';
 export default function FooterComponent() {
   return (
     <footer className="bg-gradient p-2">
@@ -47,6 +48,9 @@ export default function FooterComponent() {
             </a>
           </li>
         </ul>
+      </div>
+      <div className="col mb-3">
+          <Terms />
       </div>
     </div>
   </footer>
