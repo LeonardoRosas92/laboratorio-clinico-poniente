@@ -228,7 +228,7 @@ export default function RegistroPage() {
                           <option value="Femenino">Femenino</option>
                         </select>
                         {errors?.mysel?.type === "validate" && (
-                          <p className="error-message">Este campo es obligatorio</p>
+      <small className="text-danger">Este campo es obligatorio</small>
                         )}
                     </div>
             
