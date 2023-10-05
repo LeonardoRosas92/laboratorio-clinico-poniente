@@ -32,7 +32,7 @@ export default function ContactPage() {
   const handleButton = async (e) => {
     e.preventDefault();
     try {
-       await fetch( "https://formsubmit.co/ajax/leonrosant92@gmail.com",
+       await fetch( "https://formsubmit.co/ajax/bugbusters1@proton.me",
       // //await fetch( "https://formsubmit.co/ajax/laboratorioclinicoponiente@gmail.com",
          {
            method: "POST",
