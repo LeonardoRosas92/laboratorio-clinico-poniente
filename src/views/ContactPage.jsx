@@ -77,7 +77,7 @@ export default function ContactPage() {
                   </div>
                   <div className="col-md-6">
                     <div className="md-form mb-0">
-                      <label htmlFor="email"> Email </label>
+                      <label htmlFor="email"> Correo electrónico </label>
                       <input type="email" required id="email" name="email" className="form-control" onChange={event => setmail(event.target.value)} value={email}/>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 <div className="row">
                   <div className="col-md-6">
                     <div className="md-form mb-0">
-                      <label htmlFor="numero">Número </label>
+                      <label htmlFor="numero"> Número </label>
                       <input type="tel"pattern="[0-9]*" maxLength="15" minLength="10" required id="numero" name="numero" className="form-control" onChange={handleNumeroChange} value={numero}/>
                     </div>
                   </div>
