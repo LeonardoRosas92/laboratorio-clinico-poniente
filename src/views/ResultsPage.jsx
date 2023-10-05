@@ -29,7 +29,7 @@ export default function ResultsPage() {
                     <div className='container-results d-flex justify-content-center align-items-center m-4'>
                         <div className='row d-flex justify-content-center align-items-center'>
                             <div className='col-12'>
-                                <h3 className="text-center mb-5">Consulta tus resultados</h3>
+                                <h2 className="text-center mb-5">Consulta tus resultados</h2>
                             </div>
                             <div className='col-12 col-md-8 mb-3 mb-md-0'>
                                 <input
@@ -49,7 +49,7 @@ export default function ResultsPage() {
                             
                             {
                                 flag ? <StudyCard className="m-2" appointment={appointment} />
-                                       : <h2 className="text-center m-2">Aquí se mostrará la cita solicitada</h2> 
+                                       : <h3 className="text-center m-2">Aquí se mostrará la cita solicitada</h3> 
                             }
 
                         </div>
