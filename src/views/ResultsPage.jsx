@@ -25,7 +25,7 @@ export default function ResultsPage() {
 
 
     return (
-        <div className='container min-vh-100'>
+        <div className='container min-vh-100 d-flex justify-content-center align-items-center'>
             <form onSubmit={handleSubmit}>
                     <div className='container-results d-flex justify-content-center align-items-center m-4'>
                         <div className='row d-flex justify-content-center align-items-center'>
