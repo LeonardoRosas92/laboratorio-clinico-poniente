@@ -10,7 +10,7 @@ const NavBar = () => {
     navigate("/");
   };
   return (
-    <nav className="bg-gradient navbar navbar-dark navbar-expand-md">
+    <nav className="bg-gradient navbar navbar-dark navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src={Logo} className="logo" />
@@ -70,15 +70,24 @@ const NavBar = () => {
               {user && (
                 <li className="nav-item" id="logout">
                   <button className="nav-link" onClick={LogOut}>
-                    <i className="bi bi-box-arrow-right"></i> Cerrar sesión
+                    <i className="bi bi-box-arrow-right"></i> Salir
                   </button>
+                </li>
+              )}
+
+
+              {!user && (
+                <li className="nav-item" id="login">
+                  <Link className="nav-link" to="/registro">
+                   Registrar
+                  </Link>
                 </li>
               )}
 
               {!user && (
                 <li className="nav-item" id="login">
                   <Link className="nav-link" to="/login">
-                    <i className="bi bi-box-arrow-left"></i> Inicio de sesión
+                    <i className="bi bi-box-arrow-left"></i> Ingresar
                   </Link>
                 </li>
               )}

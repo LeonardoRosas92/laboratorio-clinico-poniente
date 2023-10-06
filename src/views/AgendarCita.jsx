@@ -37,6 +37,7 @@ export default function AgendarCita() {
     return multiselectRef.current.getSelectedItems();
   };
 
+
   const getData = async () => {
     const response = await fetch('https://lcp-backend.onrender.com/api/v1/studies');
     const responseArray = await response.json();
@@ -50,7 +51,7 @@ export default function AgendarCita() {
   const [name, setName] = useState("");
   const [lastName, setNameP] = useState("");
   const [lastName2, setNameM] = useState("");
-  const [sex, setSex] = useState("");
+  const [mysel, setMysel] = useState("");
   const [birthDate, setbirthDate] = useState("");
   const [email, setEmail] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
@@ -63,7 +64,7 @@ export default function AgendarCita() {
         name: e.name , 
         lastName: e.lastName, 
         lastName2: e.lastName2, 
-        sex: "male" ,
+        sex: e.mysel ,
         birthDate: e.birthDate, 
         email: e.email, 
         phonenumber: e.phonenumber,
@@ -80,16 +81,6 @@ export default function AgendarCita() {
       },
       body: obj});
   
-    setDate("");
-    setName("");
-    setNameP("");
-    setNameM("");
-    setSex("");
-    setbirthDate("");
-    setEmail("");
-    setPhonenumber("");
-    setTime("");
-    getData();
     toast.success('La cita se ha agendado exitosamente.');
   }
 
@@ -104,7 +95,7 @@ export default function AgendarCita() {
       setValue("name", user.name);
       setValue("lastName", user.lastName);
       setValue("lastName2", user.lastName2);
-      setValue("sex", user.sex);
+      setValue("mysel", user.sex);
       setValue("birthDate", user.birthDate);
       setValue("phonenumber", user.phonenumber);
       setValue("email", user.email);
@@ -112,7 +103,7 @@ export default function AgendarCita() {
       setValue("name", "");
       setValue("lastName", "");
       setValue("lastName2", "");
-      setValue("sex", "");
+      setValue("mysel", "");
       setValue("birthDate", "");
       setValue("phonenumber", "");
       setValue("email", "");

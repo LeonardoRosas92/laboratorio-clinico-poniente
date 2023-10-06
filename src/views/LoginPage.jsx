@@ -27,11 +27,16 @@ export default function LoginPage() {
       })
     });
     const user = await response.json();
-    toast.success('Sesión iniciada');
-    setUser({...user});
-    setTimeout(() => {
-      navigate("/userprofile")
-    }, 1000); 
+   
+    if(user.email === e.email){
+      toast.success('Sesión iniciada');
+      setUser({...user});
+      setTimeout(() => {
+        navigate("/userprofile")
+      }, 1000); 
+    } else {
+      toast.error('Usuario o contraseña incorrectos.');
+    }
   }
   return (
     <>
