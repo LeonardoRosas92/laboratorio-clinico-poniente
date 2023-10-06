@@ -8,6 +8,7 @@ export default function ContactPage() {
   const [numero, setnumero] = useState('');
   const [asunto, setAsunto] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [formularioEnviado, setFormularioEnviado] = useState(false);
 
   const borrarDatos = () => {
     setNombre('');
@@ -31,6 +32,8 @@ export default function ContactPage() {
 
   const handleButton = async (e) => {
     e.preventDefault();
+    console.log("Botón presionado");
+    setFormularioEnviado(true);
     try {
        await fetch( "https://formsubmit.co/ajax/leonrosant92@gmail.com",
       // //await fetch( "https://formsubmit.co/ajax/laboratorioclinicoponiente@gmail.com",
@@ -49,6 +52,9 @@ export default function ContactPage() {
        )
       borrarDatos();
       toast.success('El mensaje se ha enviado.')
+      setTimeout(() => {
+        setFormularioEnviado(false);
+      }, 20000);
     } catch (error) {
       toast.error("Error al enviar el mensaje.");
       console.log(error);
@@ -105,7 +111,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="text-center mt-4 my-lg-4">
-                  <button type="submit" className="btn-green">Enviar</button>
+                  <button type="submit" className="btn-green" disabled={formularioEnviado}>Enviar</button>
                 </div>
               </form>
               <div className="status"></div>
